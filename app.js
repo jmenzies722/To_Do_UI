@@ -3,6 +3,7 @@ const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoList = document.getElementById('todo-list');
 const clearCompletedButton = document.getElementById('clear-completed');
+const darkModeToggle = document.getElementById('dark-mode-toggle-checkbox');
 
 // Store todos in an array
 let todos = [];
@@ -31,6 +32,11 @@ clearCompletedButton.addEventListener('click', () => {
   clearCompletedTodoItems();
 });
 
+// Add event listener for dark mode toggle
+darkModeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
 // Add a new todo item to the list
 function addTodoItem(text) {
   const newTodo = {
@@ -50,16 +56,14 @@ function deleteTodoItem(id) {
 
 // Clear all completed todo items from the list
 function clearCompletedTodoItems() {
-    todos = todos.filter(todo => !todo.completed);
-    renderTodoList();
-  
-    if (todos.length === 0) {
-      clearCompletedButton.style.display = 'none';
-    } else {
-      clearCompletedButton.style.display = 'inline-block';
-    }
+  todos = todos.filter(todo => !todo.completed);
+  renderTodoList();
+  if (todos.length === 0) {
+    clearCompletedButton.style.display = 'none';
+  } else {
+    clearCompletedButton.style.display = 'inline-block';
   }
-  
+}
 
 // Render the todo list to the DOM
 function renderTodoList() {

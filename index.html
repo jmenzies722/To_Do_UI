@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Todo App</title>
+  <title>Todo List</title>
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
   <div class="container">
-    <h1>Todo App</h1>
+    <h1>Todo List</h1>
+    <div class="dark-mode-toggle">
+      <input type="checkbox" id="dark-mode-toggle-checkbox">
+      <label for="dark-mode-toggle-checkbox">Dark mode</label>
+    </div>
     <form id="todo-form">
-      <input type="text" id="todo-input" placeholder="Enter a new todo item...">
-      <button type="submit">Add Todo</button>
+      <input type="text" id="todo-input" placeholder="Enter a todo item...">
+      <button type="submit">Add</button>
     </form>
-    <ul id="todo-list"></ul>
-    <button type="button" class="clear-completed visible">Clear completed</button>
+    <ul id="todo-list">
+    </ul>
+    <button id="clear-completed">Clear Completed</button>
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>
